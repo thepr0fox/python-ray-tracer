@@ -1,6 +1,6 @@
-Represent Vector
+1 - Represent Vector
 
-Operations:
+ Operations:
 	
 	Magnitude: done
 		
@@ -24,3 +24,8 @@ Operations:
 
 	Division: done
 		V1 / n
+
+
+2 - Colors
+
+ Write ppm files
