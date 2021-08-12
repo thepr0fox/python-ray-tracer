@@ -1,0 +1,26 @@
+Represent Vector
+
+Operations:
+	
+	Magnitude: done
+		
+		v = (1,-2,-2)
+		magnitude of v ( ||v|| ) = sqaurerootOf(x^2+y^2+z^2) = rootOf(9) = 3
+
+	Normalize: done
+		v / ||v|| 
+
+	Dot Product: done
+		V1.V2 = a1b1 + a2b2+ a3b3
+
+	Addition: done
+		V1 + V2 
+
+	Subtraction:  done
+		V1 - V2
+
+	Multiplication: done
+		V1 * n
+
+	Division: done
+		V1 / n
