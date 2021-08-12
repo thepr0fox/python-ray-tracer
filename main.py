@@ -1,27 +1,24 @@
 #!/usr/bin/env python
-
-from image import Image
 from color import Color
+from vector import Vector
+from point import Point
+from sphere import Sphere
+from scene import Scene
+from engine import RenderEngine
 
 
 def main():
     WIDTH = 320
-    HEIGHT = 300
-    im = Image(WIDTH, HEIGHT)
-    col1 = Color(85.0 / 255, 88.0 / 255, 218.0 / 255)
-    col2 = Color(209.0 / 255, 95.0 / 255, 200.0 / 255)
+    HEIGHT = 200
 
-    for y in range(HEIGHT):
-        t = y / HEIGHT /2
-        col_one = col1 * (1.0 - t) + col2 * t
-        col_two = col2 * (1.0 - t) + col1 * t
-        for x in range(WIDTH):
-            lightness = x / WIDTH/2
-            col = col_one * (1.0 - lightness) + col_two * lightness
-            im.set_pixel(x, y, col)
+    camera = Vector(0,0,-1)
+    objects = [Sphere(Point(0,-0.3,0),0.1, Color(1,0,0)), Sphere(Point(0,0,0),0.1, Color(1,1,0)), Sphere(Point(0,0.3,0),0.1, Color(0,1,0))]
+    scene = Scene(camera, objects, WIDTH, HEIGHT)
+    engine = RenderEngine()
+    image = engine.render(scene)
 
-    with open("gradient.ppm","w") as img_file:
-        im.write_ppm(img_file)
+    with open("trafic_light.ppm","w") as img_file:
+        image.write_ppm(img_file)
 
 
 if __name__ == "__main__":

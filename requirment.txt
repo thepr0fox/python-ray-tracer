@@ -28,4 +28,47 @@
 
 2 - Colors
 
+ Represent colors(R,G,B) 
+
  Write ppm files
+
+3 - 3D in 2D
+ 	Algorithm:
+		
+		step-1: Shoot a ray towards each pixel
+		step-2: Find the nearest object hit by the ray in the scene
+		step-3: If hit then find color at surface of the object
+
+	Intersection of a ray with a sphere:
+			case-1: Intersects at 2 points
+			case-2: Intersects at 1 point(tangent)
+			case-3 Does not intersect
+		sphere to ray = ray_orgin - sphere_center
+		
+		Ray-Sphere intersection formula
+		
+			let a = 1, b = 2*ray_dir.sphere_to_ray, c = sphere_to_ray.sphere_to_ray-(sphere_radius)^2
+			
+			discriminant = b^2 - 4ac = b^2 - 4c
+
+			if discriminant > 0 it intersects at 2 points
+
+			if discriminant = 0 Intesects at 1 point
+	
+			if discriminant < 0 Does not intersects
+
+			Distance to point of intersection from ray orgin
+
+				dist = -b -sqrt(discriminant)/2a = -b -sqrt(discriminant)/2
+
+			Position of intersection
+
+				hit position = ray_orgin + ray_direction * dist
+
+	Aspect ratio correcting:
+
+		AspectRatio = width/height 
+
+		y_max = 1/aspect_ratio
+	
+		y_min = y_max * -1
