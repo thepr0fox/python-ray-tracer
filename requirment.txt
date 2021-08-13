@@ -72,3 +72,34 @@
 		y_max = 1/aspect_ratio
 	
 		y_min = y_max * -1
+
+
+
+4 - Implement light
+ 
+  
+	Apply shading algorithms
+
+		Difuse shading = cos(angle_between normal and incident ray)
+
+		if Normal is N and ray is L then the Color at surface = L.N * M_diffuse * C_object
+
+
+		M_difuse is the difuse amount of the material
+
+		C_object is the color of the object
+
+
+
+		Specular shading = light_color * material_specular(H.R)^k
+		
+		R is direction of perfect reflection
+
+		H = norm(L+V), where L is the light source and V  is the view direction
+
+		k is shininess of object
+
+
+	Material - has base color, diffuse color, abient color and specular color
+
+	Light - has position and color
