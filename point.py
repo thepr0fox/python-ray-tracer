@@ -1,5 +1,7 @@
 from vector import Vector
 
+
 class Point(Vector):
-    """Stores the 3D coordinates of a point. This is a subclass of vector"""
+    """Point stores the 3D co-ordinates. An alias for Vector"""
+
     pass
