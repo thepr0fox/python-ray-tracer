@@ -5,7 +5,7 @@ from ray import Ray
 
 
 class RenderEngine:
-    """Renders 3D objects into 2D objects using ray tracing"""
+    """Renders 3D objects into 2D screen using ray tracing"""
 
     def render(self, scene):
         width = scene.width
@@ -56,7 +56,7 @@ class RenderEngine:
         obj_color = material.color_at(hit_pos)
         to_cam = scene.camera - hit_pos
         specular_k = 50
-        color = material.ambient * Color.from_hex("#000000")
+        color = material.ambient * Color.from_hex("#010101")
         # Light calculations
         for light in scene.lights:
             to_light = Ray(hit_pos, light.position - hit_pos)
